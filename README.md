@@ -8,6 +8,8 @@
 
 ## 目录
 
+[0-简单工厂模式](#简单工厂模式)
+
 ### 1. 创建型模式
 
 [1-工厂方法模式factory-pattern](#1-工厂方法模式factory-pattern)
@@ -63,6 +65,71 @@
 ## 摘要
 
 本文将探讨设计模式在Java中的应用与实现。设计模式是一套被广泛接受的解决常见软件设计问题的经典方法。在Java编程中，设计模式是提高代码可读性、可维护性和可扩展性的关键。本文将详细介绍Java中常用的几种设计模式，包括工厂模式、单例模式、观察者模式和装饰器模式，并提供具体的代码示例和解释，帮助读者深入理解和学习这些模式的实现方式。
+
+
+
+### 简单工厂模式
+
+简单工厂模式（Simple Factory Pattern）是一种创建型设计模式，它通过定义一个工厂类来根据不同需求实例化对象。该模式将对象的创建过程封装在工厂类中，客户端只需提供所需的参数或类型，无需关心具体的对象如何创建。通过工厂方法，客户端能够获取所需的产品对象，而不需要直接调用构造函数或了解具体的类实现。
+
+
+简单工厂模式的核心思想：通过工厂类来负责创建不同类型的对象。客户端不需要知道具体的类名，只需要通过工厂类来获取所需的对象实例。
+- 定义统一的工厂类：工厂类负责创建具体的对象。
+- 将实例化对象的过程封装在工厂中：客户端不需要知道具体产品的创建过程，只需要知道如何通过工厂方法获取产品对象。
+- 避免直接在客户端代码中创建对象：客户端不直接依赖具体的类，而是通过工厂类获取对象。
+
+#### 示例:Simple_Factory_Pattern
+
+```java
+package Simple_Factory_Pattern;
+
+public class Test {
+    public static void main(String[] args) {
+        Factory.getProduct("A").show();
+        Factory.getProduct("B").show();
+    }
+}
+
+
+abstract class Product{
+    public abstract void show();
+}
+
+class ProductA extends Product{
+    @Override
+    public void show() {
+        System.out.println("Product A");
+    }
+}
+
+class ProductB extends Product{
+    @Override
+    public void show() {
+        System.out.println("Product B");
+    }
+}
+
+class Factory{
+    public static Product getProduct(String productName){
+        Product product = null;
+        switch (productName){
+            case "A":
+                product = new ProductA();
+                break;
+            case "B":
+                product = new ProductB();
+                break;
+        }
+        return product;
+    }
+}
+
+```
+
+
+
+------------------------
+
 
 ## 1.创建型模式
 

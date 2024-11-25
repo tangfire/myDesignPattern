@@ -1,4 +1,4 @@
-package example00;
+package Simple_Factory_Pattern;
 
 public class Test {
     public static void main(String[] args) {
