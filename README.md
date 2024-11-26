@@ -6,6 +6,16 @@
 [23种设计模式详解与示例代码（详解附DEMO）](https://blog.csdn.net/qq_42055933/article/details/132045046)
 
 
+
+[掌握14种UML图，清晰图示](https://blog.csdn.net/qq_35423190/article/details/125069834)
+
+[五分钟带你读懂UML类图](https://mp.weixin.qq.com/s?__biz=MzIxMjE3NjYwOQ==&mid=2247483673&idx=1&sn=d67d382bb5c35f0b8fc46f5c907cd289&chksm=960b1a8d92f7df570ba7c46fd7f9dfd4c0a37fa8b65252229fc938c804ed595db721413541e9&mpshare=1&scene=24&srcid=11263Driew2fRnd1rT6vijKT&sharer_shareinfo=73a20cde0e188cbdb8ec0d700c53982a&sharer_shareinfo_first=73a20cde0e188cbdb8ec0d700c53982a&ascene=14&devicetype=android-34&version=2800353f&nettype=WIFI&abtest_cookie=AAACAA%3D%3D&lang=zh_CN&countrycode=AU&exportkey=n_ChQIAhIQqEE0WbfxwytydUiAxACHOBL1AQIE97dBBAEAAAAAAJkBC6P3mzMAAAAOpnltbLcz9gKNyK89dVj0ANqUDLdvjm8DHlQNj6WGrWPm7mYxnLUly2ryXnujdLuBQS1RmS0yDBHKZDmXxJ9rqAy5HydZZEPB3nuz0KVK6z5Vn741Gr8lxF0TG7jiZkaAY0%2ByQ54kERxUXrTKzWJdu5HXBC3j%2BnZ2DmgoIzj93llizG7BmwYPr2t0A28A50HBmMTkxOpVzJLNCm0D2uEAYlROWjOXmY3MFQ4XyVO9rCFQ%2Fi%2BYcFIgdnKgJWPBp2zZrgu5HivB%2BzVhVpvf%2FNz%2BtszcJEe2KzSHOIlW2NOh&pass_ticket=PxAIpmPI1EG5fQiqmkDgcmbAquiXsazcadwb602lud%2BqPMEfBm8yVaEDdrBk%2BGXj&wx_header=3)
+
+[如何零基础学会看 UML 类图？](https://www.zhihu.com/question/485992778/answer/2122648738?utm_psn=1844708751317282816)
+
+
+
+
 ## 目录
 
 [0-简单工厂模式](#简单工厂模式)
@@ -69,6 +79,8 @@
 
 
 ### 简单工厂模式
+
+![simple_factory](./src/imgs/simple_factory.png)
 
 简单工厂模式（Simple Factory Pattern）是一种创建型设计模式，它通过定义一个工厂类来根据不同需求实例化对象。该模式将对象的创建过程封装在工厂类中，客户端只需提供所需的参数或类型，无需关心具体的对象如何创建。通过工厂方法，客户端能够获取所需的产品对象，而不需要直接调用构造函数或了解具体的类实现。
 
@@ -706,6 +718,8 @@ class Circle extends Shape {
 
 ### 5. 建造者模式(Builder Pattern)
 
+![builder](./src/imgs/builder.png)
+
 建造者模式是一种创建型设计模式，它将复杂对象的构建过程与其表示分离，从而使同样的构建过程可以创建不同的表示。
 
 #### 示例:Builder_Pattern/example002
@@ -902,6 +916,7 @@ class ComputerBuilder {
 ### 6. 适配器模式(Adapter Pattern)
 
 
+
 适配器模式是一种结构型设计模式，它允许不兼容的接口之间进行协同工作。适配器模式通过创建适配器类来转换一个接口为客户端所期望的另一个接口。
 
 #### 示例:Adapter_Pattern/example002
@@ -961,8 +976,17 @@ class LegacyRectangleAdapter implements Rectangle {
 #### 实现方式
 适配器模式可以分为两种实现方式：类适配器和对象适配器。
 
-- 类适配器： 通过多重继承，让适配器类同时继承目标接口和现有类，从而实现接口的适配。但在Java等语言中，由于不支持多重继承，类适配器的实现较为复杂，通常不常用。
-- 对象适配器： 通过组合，让适配器类持有现有类的实例，并实现目标接口。对象适配器使用组合关系来实现接口的适配，较为常用。
+##### 类适配器
+
+![class_adapter](./src/imgs/class_adapter.png)
+
+通过多重继承，让适配器类同时继承目标接口和现有类，从而实现接口的适配。但在Java等语言中，由于不支持多重继承，类适配器的实现较为复杂，通常不常用。
+
+##### 对象适配器
+
+![object_adapter](./src/imgs/object_adapter.png)
+
+通过组合，让适配器类持有现有类的实例，并实现目标接口。对象适配器使用组合关系来实现接口的适配，较为常用。
 
 
 #### 示例:Adapter_Pattern/example003
@@ -1294,6 +1318,9 @@ class DrawingAPI2 implements DrawingAPI {
 
 ### 8. 组合模式(Composite Pattern)
 
+
+![composite](./src/imgs/composite.png)
+
 组合模式是一种结构型设计模式，它允许我们将对象组合成树形结构以表示“部分-整体”的层次结构。组合模式使得客户端可以统一对待单个对象和组合对象，从而简化了客户端的代码。
 
 #### 示例:Composite_Pattern/example002
@@ -1496,6 +1523,8 @@ class Directory implements FileSystemComponent {
 
 ### 9. 装饰器模式(Decorator Pattern)
 
+![decorator](./src/imgs/decorator.png)
+
 装饰器模式是一种结构型设计模式，它允许在运行时动态地扩展对象的功能。装饰器模式通过创建包装类来实现功能的增强，而不是修改原始类。
 
 #### 示例:Decorator_Pattern/example002
@@ -1694,6 +1723,8 @@ class SyrupDecorator extends CoffeeDecorator {
 在这个示例中，我们使用装饰器模式为咖啡对象动态地添加了牛奶和糖浆等配料，而不需要修改咖啡类的代码。通过装饰器模式，我们可以在运行时动态地为对象添加新的功能，使得代码更加灵活和可扩展。
 
 ### 10. 外观模式(Facade Pattern)
+
+![facade](./src/imgs/facade.png)
 
 外观模式是一种结构型设计模式，它提供了一个简化的接口，用于访问复杂系统中的一组接口。外观模式将复杂系统的功能封装起来，让客户端可以更方便地使用系统功能而不需要了解其内部复杂结构。
 
@@ -1910,6 +1941,9 @@ class ComputerFacade {
 
 
 ### 11. 享元模式(Flyweight Pattern)
+
+
+![flyweight](./src/imgs/flyweight.png)
 
 享元模式是一种结构型设计模式，它通过共享对象来最大化地减少内存使用和对象创建的数量。享元模式通过使用相同或相似的对象实例来代表一组对象，从而降低了系统的内存占用和运行开销。
 
@@ -2202,6 +2236,8 @@ class ChessPieceFactory {
 
 ### 12. 代理模式(Proxy Pattern)
 
+![proxy](./src/imgs/proxy.png)
+
 
 代理模式（Proxy Pattern）是一种结构型设计模式，它允许通过一个代理对象来控制对另一个对象的访问。代理模式在不改变原始对象的情况下，提供了对原始对象的间接访问，以此来控制对原始对象的访问权限、增加额外的功能或延迟加载。
 
@@ -2390,6 +2426,9 @@ class ProxyImage implements Image {
 
 ### 13. 模版方法模式(Template Method Pattern)
 
+
+![template_method](./src/imgs/template_method.png)
+
 模板方法模式是一种行为型设计模式，它定义一个算法的骨架，而将具体的实现步骤延迟到子类中。模板方法模式使得子类可以在不改变算法结构的情况下重新定义算法的某些步骤。
 
 #### 示例:Template_Method_Pattern/example002
@@ -2572,6 +2611,10 @@ class BasketballGame extends Game {
 
 ### 14. 命令模式(Command Pattern)
 
+
+![command](./src/imgs/command.png)
+
+
 命令模式是一种行为型设计模式，它将请求或操作封装成对象，从而使得请求的发送者和接收者解耦。命令模式允许请求在不同的时间执行、排队或记录，并且支持撤销操作。
 
 #### 示例:Command_Pattern/example003
@@ -2749,6 +2792,8 @@ class RemoteControl {
 
 ### 15. 迭代器模式(Iterator Pattern)
 
+![iterator](./src/imgs/iterator.png)
+
 迭代器模式是一种行为型设计模式，它提供一种顺序访问集合对象元素的方法，而无需暴露集合的内部表示。通过迭代器模式，我们可以遍历集合中的元素，而无需了解集合的底层结构。
 
 #### 示例:Iterator_Pattern/example002
@@ -2906,6 +2951,8 @@ class MyList implements Iterator {
 在这个示例中，我们使用迭代器模式将遍历列表的操作封装在了迭代器对象中，并通过迭代器对象来遍历列表中的元素。通过迭代器模式，客户端代码与列表的具体实现解耦，使得客户端代码可以在不关心列表的具体结构的情况下，遍历列表中的元素。这样，我们可以轻松地更换不同的列表实现，而不需要修改客户端代码。
 
 ### 16. 观察者模式(Observer Pattern)
+
+![observer](./src/imgs/observer.png)
 
 观察者模式是一种行为型设计模式，它定义了一种一对多的依赖关系，让多个观察者对象同时监听一个主题对象的状态变化。当主题对象的状态发生改变时，所有依赖于它的观察者对象都会收到通知并自动更新。
 
@@ -3087,6 +3134,8 @@ class Subject {
 ```
 
 ### 17. 中介者模式(Mediator Pattern)
+
+![mediator](./src/imgs/mediator.png)
 
 中介者模式是一种行为型设计模式，它通过一个中介者对象来封装一系列对象之间的交互。中介者模式可以降低对象之间的耦合性，从而使其更易于维护和扩展。
 
@@ -3367,6 +3416,8 @@ class Lianjia implements HouseMediator {
 
 ### 18. 备忘录模式(Memento Pattern)
 
+![memento](./src/imgs/memento.png)
+
 备忘录模式是一种行为型设计模式，它允许在不破坏对象封装的前提下捕获和恢复其内部状态。备忘录模式通过创建备忘录类来保存对象状态，然后可以在需要时将其恢复。
 
 #### 示例:Memento_Pattern/example004
@@ -3515,6 +3566,8 @@ class TextEditor {
 
 
 ### 19. 解释器模式(Interpreter Pattern)
+
+![interpreter](./src/imgs/interpreter.png)
 
 解释器模式是一种行为型设计模式，它用于定义语言的文法规则，并解释执行语言中的表达式。解释器模式将每个表达式抽象成一个类，并通过组合表达式来构建更复杂的表达式。
 
@@ -3692,6 +3745,8 @@ class Context {
 
 
 ### 20. 状态模式(State Pattern)
+
+![state](./src/imgs/state.png)
 
 状态模式是一种行为型设计模式，它允许一个对象在内部状态改变时改变其行为。状态模式将对象的行为封装在不同的状态类中，从而使得状态转换更加简洁和灵活。
 
@@ -3880,6 +3935,9 @@ class Context {
 
 ### 21. 策略模式(Strategy Pattern)
 
+
+![strategy](./src/imgs/strategy.png)
+
 策略模式是一种行为型设计模式，它定义了一组算法，将每个算法都封装起来，并使它们可以相互替换。策略模式让算法的变化独立于使用算法的客户端。
 
 #### 示例:Strategy_Pattern/example002
@@ -4058,6 +4116,8 @@ class Order {
 
 ### 22. 责任链模式/职责链模式(Chain of Responsibility Pattern)
 
+![chain](./src/imgs/chain.png)
+
 责任链模式是一种行为型设计模式，它将请求的发送者和接收者解耦，允许多个对象都有机会处理请求。责任链模式将这些对象连接成一条链，并沿着这条链传递请求，直到有一个对象能够处理请求为止。
 
 #### 示例:Chain_of_Responsibility_Pattern/example002
@@ -4229,6 +4289,8 @@ class Director extends Approver {
 在这个示例中，我们使用责任链模式实现了采购审批的流程。经理审批者类 Manager 和总监审批者类 Director 组成了责任链，当一个审批者不能处理请求时，它会将请求传递给下一个审批者，直到有一个审批者处理为止。客户端代码持有责任链中的第一个审批者，并将请求发送给它。通过责任链模式，我们将请求的发送者和接收者解耦，使得多个审批者都有机会处理采购审批的请求，并且可以灵活地扩展或修改审批流程。
 
 ### 23. 访问者模式(Visitor Pattern)
+
+![visitor](./src/imgs/visitor.png)
 
 
 访问者模式（Visitor Pattern）是一种行为型设计模式，目的是将操作与对象结构分离。这样，我们可以在不修改对象结构的情况下添加新的操作。
