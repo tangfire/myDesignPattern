@@ -1108,6 +1108,8 @@ class MediaAdapter implements MediaPlayer {
 
 ### 7. 桥接模式(Bridge Pattern)
 
+![bridge](./src/imgs/bridge.png)
+
 桥接模式是一种结构型设计模式，它将抽象部分与实现部分分离，允许它们可以独立地变化。桥接模式通过组合多个对象来完成更复杂的功能，而不是继承单个类。
 
 #### 示例:Bridge_Pattern/example001
